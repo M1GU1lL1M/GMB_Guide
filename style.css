@@ -8,7 +8,8 @@ body {
     overflow: hidden;
 }
 
-header, footer {
+header,
+footer {
     background-color: white;
     color: black;
     font-family: 'Courier New', Courier, monospace;
@@ -59,6 +60,31 @@ main {
     margin-top: 10%;
 }
 
-#logo{
+#logo {
     width: 200px;
+}
+
+.container {
+    position: relative;
+    right: 0;
+    left: 87;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1920px; 
+    margin: 0;
+}
+
+.jogo {
+    flex: calc(25% - 20px);
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    height: 500px;
+    width: 300px;
 }
