@@ -4,12 +4,13 @@ body {
     box-sizing: border-box;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
     overflow: hidden;
 }
 
 header, footer {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -33,11 +34,11 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: green;
     font-size: 18px;
     padding: 0 15px;
     text-transform: capitalize;
-    margin-left: 92em;
+    margin-left: 80em;
 }
 
 h1 {
@@ -56,4 +57,8 @@ main {
     position: absolute;
     margin-left: 20%;
     margin-top: 10%;
+}
+
+#logo{
+    width: 200px;
 }
