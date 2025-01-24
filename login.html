@@ -9,7 +9,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="../GMB_Guide-main/imgs/icone_de_cadastro-removebg-preview.png" />
 </head>
 <body>
-    
     <div class="packer">
         <form action="">
             <h1>Entrar</h1>
@@ -30,10 +29,34 @@
             <button type="submit" class="btn">Entrar</button>
             
             <div class="link-registro">
-                <p>Não tem uma conta? <a href="/cadastro/cadastro.html">Criar conta</a> </p>
+                <p>Não tem uma conta? <a href="cadastro/cadastro.html">Criar conta</a> </p>
             </div>
         </form>
     </div>
 
+    <img id="voarimg" src="imgs/icon 2.png" alt="controle">
+    
+    <script>
+
+    document.addEventListener('DOMContentLoaded', () => { const img = document.getElementById('voarimg');
+    
+    let rotation = 0; 
+
+    function moverimagem() {
+
+        rotation += 0.8;  
+        img.style.transform = `rotate(${rotation}deg)`; 
+
+        const x = Math.random() * (window.innerWidth - img.width); 
+        const y = Math.random() * (window.innerHeight - img.height); 
+
+        img.style.left = `${x}px`; 
+        img.style.top = `${y}px`; 
+    }
+
+    setInterval(moverimagem, 3000); 
+    });
+
+    </script>
 </body>
 </html>
