@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="../GMB_Guide-main/imgs/icone_de_cadastro-removebg-preview.png" />
@@ -11,31 +11,31 @@
 <body>
 
     <div class="voltar">
-        <a href="../login.html"> voltar</a>
-      </div>
+        <a href="../login.html">voltar</a>
+    </div>
 
     <div class="packer">
-        <form action="">
+        <form id="formularioCadastro">
             <h1>Cadastro</h1>
             <div class="input-box">
-                <input type="email" placeholder="E-mail" required>
+                <input type="email" id="email" placeholder="E-mail" required>
                 <i class='bx bxs-user'></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Senha" required>
-                <i class='bx bxs-lock-alt' ></i>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
+
             <div class="input-box">
-                <input type="text" placeholder="Nome de usuário" required>
+                <input type="text" id="nomeUsuario" placeholder="Nome de usuário" required>
                 <i class='bx bxs-user'></i>
             </div>
 
-            <button type="submit" class="btn" >Salvar</button>
-            
-
+            <button type="submit" class="btn">Salvar</button>
         </form>
     </div>
 
+    <script src="cadastro.js"></script>
 </body>
 </html>
