@@ -8,13 +8,16 @@ body {
     line-height: 1.6;
 }
 main {
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    background: transparent;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 80px;
     padding-right: 80px;
     margin-left: 200px;
-    margin-right: 200px;
-    background-color: #121212;
+    margin-right: 200px;   
+    border-radius: 10px;
 }
 
 #logo {
@@ -25,10 +28,12 @@ main {
 
 header {
     height: 150px;
-    background-color: #000000;
+    background: transparent;
+    backdrop-filter: blur(20px);
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+    margin-bottom: 80px;
 }
 
 header h1 {
@@ -42,6 +47,8 @@ header p {
 }
 
 nav {
+    border-top: 2px solid rgba(255, 255, 255, .2);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
     background-color: #125a24;
     display: flex;
 }
@@ -62,7 +69,6 @@ nav a:hover {
 
 
 .container {
-    
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
@@ -80,6 +86,7 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    padding-bottom: 20px;
 }
 
 .jogo.fade-in {
@@ -90,6 +97,14 @@ nav a:hover {
     transition: 0.3s;
     transform: translateY(-5px);
     transform: scale(1.05);
+}
+.test{
+    opacity: 0;
+    background-color: #125a24;
+}
+
+.jogo:hover .test{
+    opacity: 1;
 }
 
 .jogo .img-jogo {
@@ -109,13 +124,16 @@ nav a:hover {
 }
 
 .jogo .desc {
-    padding: 15px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
     color: #dddddd;
     font-size: 10px;
 }
 
-
 footer {
+    border-top: 2px solid rgba(255, 255, 255, .2);
     background-color: #000000;
     color: #aaaaaa;
     text-align: center;
