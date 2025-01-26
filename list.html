@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="imgs/logo.jpeg" id="logo">
+            <h1>Já Joguei</h1>
+        <p>Jogos do catálogo que foram adicionados</p>
+        </div>
+    </header>
+
+    <main>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Catálogo de Jogos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.jogo').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.jogo.highlight').forEach(i => i.classList.remove('highlight'));
+                    item.classList.add('highlight');
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
