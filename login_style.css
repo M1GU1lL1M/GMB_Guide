@@ -15,7 +15,7 @@ body {
     background: url(imgs/background.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    overflow: hidden; /* Previne rolagem */
+    overflow: hidden;
     margin: 0;
 }
 

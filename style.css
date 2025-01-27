@@ -144,3 +144,25 @@ footer {
 footer p {
     margin: 0;
 }
+
+.popup {
+    position: absolute;
+    background: black;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 250px;
+    display: none;
+}
+
+.popup h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+#cefet-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
