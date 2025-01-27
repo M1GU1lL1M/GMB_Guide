@@ -24,12 +24,19 @@ if ($conn->connect_error) {
 }
 
 $sql = $conn->prepare("SELECT senha FROM usuarios WHERE nome_usuario = ?");
+if ($sql === false) {
+    echo json_encode(["sucesso" => false, "mensagem" => "Erro ao preparar a consulta."]);
+    exit;
+}
+
 $sql->bind_param("s", $nomeUsuario);
 $sql->execute();
+
 $resultado = $sql->get_result();
 
 if ($resultado->num_rows > 0) {
     $linha = $resultado->fetch_assoc();
+
     if (password_verify($senha, $linha["senha"])) {
         echo json_encode(["sucesso" => true, "mensagem" => "Login realizado com sucesso!"]);
     } else {

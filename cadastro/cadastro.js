@@ -11,9 +11,14 @@ document.getElementById("formularioCadastro").addEventListener("submit", functio
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, senha, nomeUsuario }),
+            body: JSON.stringify({ email, senha, nomeUsuario }), 
         })
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erro na resposta do servidor.");
+            }
+            return response.json(); 
+        })
         .then((data) => {
             if (data.sucesso) {
                 alert(data.mensagem);

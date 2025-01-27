@@ -9,12 +9,19 @@ if (!isset($dadosRecebidos["email"], $dadosRecebidos["senha"], $dadosRecebidos["
 }
 
 $email = $dadosRecebidos["email"];
-$senha = password_hash($dadosRecebidos["senha"], PASSWORD_DEFAULT);
+$senha = $dadosRecebidos["senha"];
 $nomeUsuario = $dadosRecebidos["nomeUsuario"];
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(["sucesso" => false, "mensagem" => "E-mail inválido."]);
+    exit;
+}
+
+$senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
 
 $servidor = "localhost";
 $usuario = "root";
-$senhaBD = ""; 
+$senhaBD = "";
 $banco = "sistema_cadastro";
 
 $conn = new mysqli($servidor, $usuario, $senhaBD, $banco);
@@ -24,8 +31,18 @@ if ($conn->connect_error) {
     exit;
 }
 
+$sqlCheck = $conn->prepare("SELECT id FROM usuarios WHERE email = ? OR nome_usuario = ?");
+$sqlCheck->bind_param("ss", $email, $nomeUsuario);
+$sqlCheck->execute();
+$resultadoCheck = $sqlCheck->get_result();
+
+if ($resultadoCheck->num_rows > 0) {
+    echo json_encode(["sucesso" => false, "mensagem" => "E-mail ou nome de usuário já cadastrado."]);
+    exit;
+}
+
 $sql = $conn->prepare("INSERT INTO usuarios (email, senha, nome_usuario) VALUES (?, ?, ?)");
-$sql->bind_param("sss", $email, $senha, $nomeUsuario);
+$sql->bind_param("sss", $email, $senhaCriptografada, $nomeUsuario);
 
 if ($sql->execute()) {
     echo json_encode(["sucesso" => true, "mensagem" => "Cadastro realizado com sucesso!"]);
