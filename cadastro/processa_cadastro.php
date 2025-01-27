@@ -9,14 +9,13 @@ if (!isset($dadosRecebidos["email"], $dadosRecebidos["senha"], $dadosRecebidos["
 }
 
 $email = $dadosRecebidos["email"];
-$senha = password_hash($dadosRecebidos["senha"], PASSWORD_DEFAULT); // Hash da senha
+$senha = password_hash($dadosRecebidos["senha"], PASSWORD_DEFAULT);
 $nomeUsuario = $dadosRecebidos["nomeUsuario"];
 
-// Conexão com o banco de dados
 $servidor = "localhost";
-$usuario = "root"; // Usuário do banco
-$senhaBD = ""; // Senha do banco
-$banco = "sistema_cadastro"; // Nome do banco
+$usuario = "root";
+$senhaBD = ""; 
+$banco = "sistema_cadastro";
 
 $conn = new mysqli($servidor, $usuario, $senhaBD, $banco);
 
@@ -25,7 +24,6 @@ if ($conn->connect_error) {
     exit;
 }
 
-// Inserir os dados no banco
 $sql = $conn->prepare("INSERT INTO usuarios (email, senha, nome_usuario) VALUES (?, ?, ?)");
 $sql->bind_param("sss", $email, $senha, $nomeUsuario);
 
