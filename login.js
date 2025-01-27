@@ -1,23 +1,22 @@
-document.getElementById("formularioCadastro").addEventListener("submit", function (e) {
+document.getElementById("formularioLogin").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value.trim();
     const nomeUsuario = document.getElementById("nomeUsuario").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
-    if (email && senha && nomeUsuario) {
-        fetch("processa_cadastro.php", {
+    if (nomeUsuario && senha) {
+        fetch("processa_login.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, senha, nomeUsuario }),
+            body: JSON.stringify({ nomeUsuario, senha }),
         })
         .then((response) => response.json())
         .then((data) => {
             if (data.sucesso) {
                 alert(data.mensagem);
-                window.location.href = "login.html";
+                window.location.href = "index.html";
             } else {
                 alert("Erro: " + data.mensagem);
             }

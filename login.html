@@ -10,28 +10,30 @@
 </head>
 <body>
     <div class="packer">
-        <form action="">
+
+        <form id="formularioLogin">
             <h1>Entrar</h1>
             <div class="input-box">
-                <input type="text" placeholder="Nome de usuário" required>
+                <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Nome de usuário" required>
                 <i class='bx bxs-user'></i>
             </div>
-
+        
             <div class="input-box">
-                <input type="password" placeholder="Senha" required>
-                <i class='bx bxs-lock-alt' ></i>
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-
+        
             <div class="lembre">
                 <label><input type="checkbox">Lembre de mim</label>
             </div>
-
+        
             <button type="submit" class="btn">Entrar</button>
-            
+        
             <div class="link-registro">
-                <p>Não tem uma conta? <a href="cadastro/cadastro.html">Criar conta</a> </p>
+                <p>Não tem uma conta? <a href="cadastro/cadastro.html">Criar conta</a></p>
             </div>
         </form>
+        
     </div>
 
     <img id="voarimg" src="imgs/icon 2.png" alt="controle">
@@ -58,5 +60,6 @@
     });
 
     </script>
+    <script src="login.js"></script>
 </body>
 </html>
