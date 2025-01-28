@@ -16,7 +16,9 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    background-color: black;
+    background: url(../imgs/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .packer {
@@ -84,7 +86,7 @@ body {
 
 
 .btn:hover{
-    background-color: #13327a;
+    background-color: #034718;
     color: white;
 }
 
@@ -103,17 +105,29 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease, transform 0.3s ease ;
     text-decoration: none;
+    font-family: "Red Hat Display"
 }
 
 .voltar:hover {
-    background-color: #13327a;
+    background-color: #034718;
     color: white;
     transform: translateY(-3px);
 }
 
 .voltar:active {
-    background-color: #004085; 
+    background-color: #034718;
     transform: translateY(1px); 
 
 }
 
+#voarimg {
+    z-index: -1;
+    position: absolute;
+    width: 80px;  
+    transition: transform 4s ease, left 4s ease, top 4s ease; 
+}
+
+h1::selection{
+    color: black;
+    background-color: white;
+}
