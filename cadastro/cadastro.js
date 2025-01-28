@@ -35,3 +35,22 @@ document.getElementById("formularioCadastro").addEventListener("submit", functio
         alert("Por favor, preencha todos os campos!");
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => { const img = document.getElementById('voarimg');
+    
+    let rotation = 0; 
+
+    function moverimagem() {
+
+        rotation += 0.8;  
+        img.style.transform = `rotate(${rotation}deg)`; 
+
+        const x = Math.random() * (window.innerWidth - img.width); 
+        const y = Math.random() * (window.innerHeight - img.height); 
+
+        img.style.left = `${x}px`; 
+        img.style.top = `${y}px`; 
+    }
+
+    setInterval(moverimagem, 3000); 
+    });
