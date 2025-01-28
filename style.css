@@ -162,7 +162,7 @@ footer p {
 }
 
 #cefet-link {
-    color: blue;
+    color: white;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
