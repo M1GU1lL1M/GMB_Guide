@@ -114,6 +114,7 @@ nav a:hover {
 
 .game:hover .add{
     opacity: 1;
+    background-color: rgb(241, 5, 5);
 }
 
 .jogo .img-jogo {
