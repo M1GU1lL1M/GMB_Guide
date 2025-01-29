@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital@0;1&display=swap');
+
 body {
     background-image: url(imgs/background1.jpg);
-    font-family: 'Arial', sans-serif;
+    font-family: "Red Hat Display";
     margin: 0;
     padding: 0;
     
@@ -222,4 +224,8 @@ footer p {
     padding-bottom: 15px;
     color: #dddddd;
     font-size: 13px;
+}
+*::selection{
+    color: #ffffff;
+    background-color: #125a24;
 }
