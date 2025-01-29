@@ -7,32 +7,82 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/icon.jpg">
 </head>
+
 <body>
+
     <header>
-        <div>
-            <img src="imgs/logo.jpeg" id="logo">
-            <h1>Já Joguei</h1>
-        <p>Jogos do catálogo que foram adicionados</p>
-        </div>
+        <img src="imgs/logo-removebg-preview.png" id="logo">
+        <nav>
+                <a href="index.html">voltar</a>
+        </nav>
     </header>
 
+    <h1>Já Joguei</h1>
+
     <main>
+        <ul id="gamesList" class="container"></ul>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            let addedGames = JSON.parse(sessionStorage.getItem('addedGames')) || [];
+
+            
+            const gamesList = document.getElementById('gamesList');
+
+            if (addedGames.length > 0) {
+                addedGames.forEach(gameHTML => {
+                    
+                    let gameDiv = document.createElement('div');
+                    gameDiv.classList.add('game');
+                    gameDiv.innerHTML = gameHTML;
+
+                    let button = gameDiv.querySelector('.add');
+                    if (button) button.remove();
+
+                    gamesList.appendChild(gameDiv);
+                });
+            } else {
+                gamesList.innerHTML = "<p>Nenhum jogo foi adicionado ainda.</p>";
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.game').forEach(item => {
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.game.highlight').forEach(i => i.classList.remove('highlight'));
+            item.classList.add('highlight');
+            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+
+    window.addEventListener('load', () => {
+        const timelineItems = document.querySelectorAll('.game');
+        timelineItems.forEach((item, index) => {
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    item.classList.add('fade-in');
+                }, index * 150);
+            });
+        });
+    });
+});
+
+function filterTimeline(type) {
+    document.querySelectorAll('.game').forEach(item => {
+        if (type === 'all' || item.getAttribute('data-type') === type) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+    </script>
 
     <footer>
         <p>&copy; 2025 Catálogo de Jogos. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.jogo').forEach(item => {
-                item.addEventListener('click', () => {
-                    document.querySelectorAll('.jogo.highlight').forEach(i => i.classList.remove('highlight'));
-                    item.classList.add('highlight');
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                });
-            });
-        });
-    </script>
 </body>
+
 </html>
