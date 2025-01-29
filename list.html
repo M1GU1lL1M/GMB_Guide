@@ -6,6 +6,7 @@
     <title>Catálogo de Jogos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/icon.jpg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -37,10 +38,6 @@
                     let gameDiv = document.createElement('div');
                     gameDiv.classList.add('game');
                     gameDiv.innerHTML = gameHTML;
-
-                    let button = gameDiv.querySelector('.add');
-                    if (button) button.remove();
-
                     gamesList.appendChild(gameDiv);
                 });
             } else {
@@ -78,6 +75,24 @@ function filterTimeline(type) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll('.add');
+
+    buttons.forEach(button => {
+                button.textContent = "- Remove";
+    });
+
+    document.querySelectorAll('.add').forEach(button => {
+    button.addEventListener('click', function () {
+        const gameDiv = button.closest('.game');
+        gameDiv.remove()
+    });
+});
+
+
+});
+
     </script>
 
     <footer>
