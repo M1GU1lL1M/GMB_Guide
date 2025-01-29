@@ -112,6 +112,10 @@ nav a:hover {
     opacity: 1;
 }
 
+.game:hover .add{
+    opacity: 1;
+}
+
 .jogo .img-jogo {
     width: 100%;
     height: 270px;
