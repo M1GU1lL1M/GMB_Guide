@@ -128,6 +128,6 @@ h1::selection, p::selection, a::selection, label::selection{
 }
 
 .btn:hover{
-    background-color: #13327a;
+    background-color: #034718;
     color: white;
 }
