@@ -7,7 +7,12 @@ body {
     color: #ffffff;
     line-height: 1.6;
 }
+
+h1{
+    text-align: center;
+}
 main {
+    min-height: 580px;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     background: transparent;
@@ -54,8 +59,8 @@ nav {
 }
 
 nav a {
+    margin-left: 40px;
     color: #ffffff;
-    margin-left: 1650px;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -98,12 +103,12 @@ nav a:hover {
     transform: translateY(-5px);
     transform: scale(1.05);
 }
-.test{
+.add{
     opacity: 0;
     background-color: #125a24;
 }
 
-.jogo:hover .test{
+.jogo:hover .add{
     opacity: 1;
 }
 
@@ -165,4 +170,51 @@ footer p {
     color: white;
     cursor: pointer;
     text-decoration: none;
+}
+
+.game {
+    min-width: 350px; 
+    max-width: calc(33.33% - 20px); 
+    background-color: #1e1e1e;
+    border: 2px solid #125a24;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding-bottom: 20px;
+}
+
+.game.fade-in {
+    opacity: 1;
+}
+
+.game:hover {
+    transition: 0.3s;
+    transform: translateY(-5px);
+    transform: scale(1.05);
+}
+.game .img-jogo {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.game .tittle {
+    height: 50px;
+    background-color: #125a24;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.game .desc {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    color: #dddddd;
+    font-size: 13px;
 }
