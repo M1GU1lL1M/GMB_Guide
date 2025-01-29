@@ -29,6 +29,26 @@ function filterTimeline(type) {
     });
 }
 
+
+document.querySelectorAll('.add').forEach(button => {
+    button.addEventListener('click', function () {
+        
+        const gameDivContent = this.parentElement.innerHTML;
+
+        
+        let addedGames = JSON.parse(sessionStorage.getItem('addedGames')) || [];
+        
+        if (!addedGames.includes(gameDivContent)) {
+            addedGames.push(gameDivContent);
+            sessionStorage.setItem('addedGames', JSON.stringify(addedGames));
+            alert(`O jogo foi adicionado!`);
+        } else {
+            alert(`O jogo já está na lista!`);
+        }
+    });
+});
+
+
 /*
 $(document).ready(function() {
     // Interatividade para destacar itens da linha do tempo
